@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var myTextField = UITextField()
     
-    
+    var baseArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,9 +80,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if textField == myTextField {
             self.myTextField.resignFirstResponder()
             print("Вы ввели: \(textField.text ?? "nil")")
+            self.baseArray.append(textField.text ?? "nil")
             self.myTextField.text = ""
         }
         print("Вы ввели: \(textField.text ?? "nil")")
+        print(baseArray)
         return true
     }
     
